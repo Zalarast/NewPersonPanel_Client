@@ -3,8 +3,8 @@ export interface LoginProps {
 }
 
 export interface AuthData {
-  login: null | string;
-  password: null | string;
+  login: string;
+  password: string;
 }
 
 export interface MainProps {

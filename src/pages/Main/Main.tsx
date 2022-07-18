@@ -1,5 +1,5 @@
-import { NavMenu } from "../components";
-import { LoginProps } from "../types";
+import { NavMenu } from "../../components";
+import { LoginProps } from "../../types";
 export default function Main({ auth }: LoginProps) {
   return (
     <div>

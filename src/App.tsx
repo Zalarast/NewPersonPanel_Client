@@ -1,6 +1,5 @@
 import React from "react";
-import Login from "./pages/Login";
-import Main from "./pages/Main";
+import { Login, Main } from "./pages";
 
 function App() {
   const [login, setLogin] = React.useState(false);

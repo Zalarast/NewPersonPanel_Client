@@ -1,11 +1,12 @@
 import React from "react";
-import "../CSS/Login.css";
-import { AuthData, LoginProps } from "../types";
+import "../../CSS/Login.css";
+import { AuthData, LoginProps } from "../../types";
+import { authorization } from "./functions";
 
 export default function Login({ auth }: LoginProps) {
   const [authData, setAuthData] = React.useState<AuthData>({
-    login: null,
-    password: null,
+    login: "",
+    password: "",
   });
 
   React.useEffect(() => console.log(authData), [authData]);
@@ -14,9 +15,12 @@ export default function Login({ auth }: LoginProps) {
     setAuthData({ ...authData, [e.target.name]: e.target.value });
   };
 
-  const loginIn = () => {
-    if (authData.login && authData.password) auth();
-    else alert("Ошибка, введены не все данные");
+  const loginIn = async () => {
+    if (authData.login && authData.password) {
+      const result = await authorization(authData);
+      if (result) auth();
+      else alert("Неизвестный пользователь");
+    } else alert("Ошибка, введены не все данные");
   };
 
   return (
