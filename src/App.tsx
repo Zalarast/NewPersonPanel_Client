@@ -7,6 +7,7 @@ function App() {
   const [login, setLogin] = React.useState(false);
   const setAuth = () => setLogin(!login);
 
+  // eslint-disable-next-line
   React.useEffect(() => {
     const token = getCookie("token");
     if (token) {

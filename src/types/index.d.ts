@@ -10,3 +10,8 @@ export interface AuthData {
 export interface MainProps {
   auth: () => void;
 }
+
+export interface NavMenuProps {
+  open: () => void;
+  stateOpen: boolean;
+}
