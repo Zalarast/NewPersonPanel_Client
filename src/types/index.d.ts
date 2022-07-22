@@ -15,3 +15,8 @@ export interface NavMenuProps {
   open: () => void;
   stateOpen: boolean;
 }
+
+export interface HeadProps {
+  openMenu: () => void;
+  reAuth: () => void;
+}
