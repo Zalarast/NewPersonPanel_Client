@@ -7,7 +7,7 @@ export async function authorization(authData: {
 }): Promise<boolean> {
   const res = await axios({
     url: serverUrl() + "/auth",
-    data: authData,
+    data: { ...authData, reauth: true },
     method: "POST",
   });
   if (res.data.token) setCookie("token", res.data.token);
@@ -17,7 +17,7 @@ export async function authorization(authData: {
 export async function autoAuthorization(token: string) {
   const res = await axios({
     url: serverUrl() + "/auth",
-    data: {token: token},
+    data: { token: token, reauth: false },
     method: "POST",
   });
   if (res.data.token) setCookie("token", res.data.token);
