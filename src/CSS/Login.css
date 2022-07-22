@@ -10,6 +10,8 @@
 .Login input {
     border-radius: 15px;
     padding: 5px 5px;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: large;
 }
 
 .loginTitle {
