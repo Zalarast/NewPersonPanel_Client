@@ -3,7 +3,7 @@ import "../../CSS/Login.css";
 import { AuthData, LoginProps } from "../../types";
 import { authorization } from "./functions";
 
-export default function Login({ auth }: LoginProps) {
+export default function Login({ auth, login, children }: LoginProps) {
   const [authData, setAuthData] = React.useState<AuthData>({
     login: "",
     password: "",
@@ -23,7 +23,9 @@ export default function Login({ auth }: LoginProps) {
     } else alert("Ошибка, введены не все данные");
   };
 
-  return (
+  return login ? (
+    children
+  ) : (
     <div className="Login" onKeyDown={(e) => e.key === "Enter" && loginIn()}>
       <h1 className="loginTitle">Авторизация</h1>
       <div>

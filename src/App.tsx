@@ -21,7 +21,9 @@ function App() {
 
   return (
     <div className="App">
-      {login ? <Main auth={setAuth} /> : <Login auth={setAuth} />}
+      <Login auth={setAuth} login={login}>
+        <Main auth={setAuth} />
+      </Login>
     </div>
   );
 }
