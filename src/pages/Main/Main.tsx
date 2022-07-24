@@ -1,12 +1,12 @@
 import { Head, NavMenu } from "../../components";
-import { LoginProps } from "../../types";
+import { MainProps } from "../../types";
 import { removeCoockie } from "../../utils";
 import "../../CSS/Main.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ActiveDirectory } from "../";
 
-export default function Main({ auth }: LoginProps) {
+export default function Main({ auth }: MainProps) {
   const [navOpen, setNavOpen] = React.useState(false);
   const handleOpenNavMenu = () => setNavOpen(!navOpen);
   const reAuth = () => {
