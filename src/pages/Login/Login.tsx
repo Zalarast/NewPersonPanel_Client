@@ -9,8 +9,6 @@ export default function Login({ auth, login, children }: LoginProps) {
     password: "",
   });
 
-  React.useEffect(() => console.log(authData), [authData]);
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAuthData({ ...authData, [e.target.name]: e.target.value });
   };
