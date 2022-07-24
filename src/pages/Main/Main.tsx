@@ -18,7 +18,18 @@ export default function Main({ auth }: MainProps) {
       <NavMenu open={handleOpenNavMenu} stateOpen={navOpen} />
       <Head openMenu={handleOpenNavMenu} reAuth={reAuth} />
       <Routes>
+        <Route
+          path="/"
+          element={
+            <div>Приветсвую на сайте по добавлению новых сотрудников</div>
+          }
+        />
         <Route path="/ActiveDirectory" element={<ActiveDirectory />} />
+        <Route
+          path="/Bitrix24"
+          element={<div>Создание учётки в Bitrix24</div>}
+        />
+        <Route path="*" element={<div>Неизвестная страница</div>} />
       </Routes>
     </div>
   );
