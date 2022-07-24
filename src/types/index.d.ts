@@ -1,5 +1,7 @@
 export interface LoginProps {
   auth: () => void;
+  login: boolean;
+  children: JSX.Element;
 }
 
 export interface AuthData {
