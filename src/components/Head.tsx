@@ -1,12 +1,12 @@
 import { HeadProps } from "../types";
 import "../CSS/Head.css";
-import { Link } from "react-router-dom";
+import UserMenu from "./UserMenu";
 
-export default function Head({ openMenu, reAuth }: HeadProps) {
+export default function Head({ openMenu, reAuth, userInfo }: HeadProps) {
   return (
     <div className="Head">
       <button onClick={openMenu}>Открыть панель</button>
-      <Link to="/"><button onClick={reAuth}>Выйти из учётки</button></Link>
+      <UserMenu userInfo={userInfo} logOut={reAuth} />
     </div>
   );
 }
