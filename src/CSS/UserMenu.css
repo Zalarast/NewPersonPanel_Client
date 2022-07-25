@@ -1,0 +1,28 @@
+.UserMenu{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.userInfo .avatar {
+    height: 90%;
+    border-radius: 50px;
+}
+
+.userInfo h2 {
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    font-size: 30px;
+    font-weight: 500;
+}
