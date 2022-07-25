@@ -6,17 +6,17 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { ActiveDirectory } from "../";
 
-export default function Main({ auth }: MainProps) {
+export default function Main({ auth, userInfo }: MainProps) {
   const [navOpen, setNavOpen] = React.useState(false);
   const handleOpenNavMenu = () => setNavOpen(!navOpen);
   const reAuth = () => {
-    removeCoockie("token");
+    removeCoockie(["UID", "PID"]);
     auth();
   };
   return (
     <div className="Main">
       <NavMenu open={handleOpenNavMenu} stateOpen={navOpen} />
-      <Head openMenu={handleOpenNavMenu} reAuth={reAuth} />
+      <Head openMenu={handleOpenNavMenu} reAuth={reAuth} userInfo={userInfo}/>
       <Routes>
         <Route
           path="/"
