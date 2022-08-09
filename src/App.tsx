@@ -1,7 +1,7 @@
 import React from "react";
 import { Login, Main } from "./pages";
 import { autoAuthorization } from "./pages/Login/functions";
-import { userInfo } from "./types"
+import { userInfo } from "./types";
 
 function App() {
   const [login, setLogin] = React.useState(false);
@@ -10,7 +10,7 @@ function App() {
 
   // eslint-disable-next-line
   React.useEffect(() => {
-    autoAuthorization()
+    autoAuthorization(setUserInfo)
       .then((res) => res && setAuth())
       .catch((err) => console.error("При авторизации произошла ошибка:", err));
   }, []);

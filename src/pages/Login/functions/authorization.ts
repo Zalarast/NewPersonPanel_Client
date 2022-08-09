@@ -20,14 +20,18 @@ export async function authorization(
   return res.data.result;
 }
 
-export async function autoAuthorization() {
+export async function autoAuthorization(
+  setUserInfo: React.Dispatch<React.SetStateAction<userInfo>>
+) {
   if (getCookie("UID")) {
     const res = await axios({
       url: serverUrl() + "/auth",
       data: { token: getCookie("UID"), reauth: false },
       method: "POST",
     });
-    if (res.data.token) setCookie("UID", res.data.token);
+    res.data.token && setCookie("UID", res.data.token);
+    res.data.userInfo.login && setCookie("PID", res.data.userInfo.login);
+    setUserInfo({ ...res.data.userInfo });
     return res.data.result;
   } else return false;
 }
