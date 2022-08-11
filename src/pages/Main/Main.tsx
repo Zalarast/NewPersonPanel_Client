@@ -4,7 +4,7 @@ import { removeCoockie } from "../../utils";
 import "../../CSS/Main.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { ActiveDirectory } from "../";
+import { ActiveDirectory, Settings } from "../";
 
 export default function Main({ auth, userInfo }: MainProps) {
   const [navOpen, setNavOpen] = React.useState(false);
@@ -16,7 +16,7 @@ export default function Main({ auth, userInfo }: MainProps) {
   return (
     <div className="Main">
       <NavMenu open={handleOpenNavMenu} stateOpen={navOpen} />
-      <Head openMenu={handleOpenNavMenu} reAuth={reAuth} userInfo={userInfo}/>
+      <Head openMenu={handleOpenNavMenu} reAuth={reAuth} userInfo={userInfo} />
       <Routes>
         <Route
           path="/"
@@ -29,6 +29,7 @@ export default function Main({ auth, userInfo }: MainProps) {
           path="/Bitrix24"
           element={<div>Создание учётки в Bitrix24</div>}
         />
+        <Route path="/Settings" element={<Settings />} />
         <Route path="*" element={<div>Неизвестная страница</div>} />
       </Routes>
     </div>
