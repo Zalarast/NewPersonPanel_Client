@@ -5,6 +5,7 @@ import { generatePassword } from "../../utils";
 export default function ActiveDirectory() {
   const [pass, setPass] = React.useState("");
   const generatePass = () => setPass(generatePassword(10));
+  const handleChangePass = (e: React.ChangeEvent<HTMLInputElement>) => setPass(e.target.value)
   return (
     <div className="ActiveDirectory">
       <h1>Введите данные о новом сотруднике</h1>
@@ -17,10 +18,15 @@ export default function ActiveDirectory() {
         <input
           placeholder="password123"
           value={pass}
-          onChange={(e) => setPass(e.target.value)}
+          onChange={handleChangePass}
         />
         <button onClick={generatePass} style={{ position: "absolute" }}>
           Сгенерировать
+        </button>
+      </div>
+      <div>
+        <button onClick={() => alert(pass)}>
+          Показать Пароль
         </button>
       </div>
     </div>
