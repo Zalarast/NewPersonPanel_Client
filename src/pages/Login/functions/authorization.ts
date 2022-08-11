@@ -14,9 +14,11 @@ export async function authorization(
     data: { ...authData, reauth: true },
     method: "POST",
   });
+  if (res.data.result) {
   res.data.token && setCookie("UID", res.data.token);
   res.data.userInfo.login && setCookie("PID", res.data.userInfo.login);
   setUserInfo({ ...res.data.userInfo });
+}
   return res.data.result;
 }
 
@@ -29,9 +31,11 @@ export async function autoAuthorization(
       data: { token: getCookie("UID"), reauth: false },
       method: "POST",
     });
-    res.data.token && setCookie("UID", res.data.token);
-    res.data.userInfo.login && setCookie("PID", res.data.userInfo.login);
-    setUserInfo({ ...res.data.userInfo });
+    if (res.data.result) {
+      res.data.token && setCookie("UID", res.data.token);
+      res.data.userInfo.login && setCookie("PID", res.data.userInfo.login);
+      setUserInfo({ ...res.data.userInfo });
+    }
     return res.data.result;
   } else return false;
 }
