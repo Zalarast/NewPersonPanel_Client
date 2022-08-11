@@ -13,6 +13,9 @@ export default function NavMenu({ stateOpen, open }: NavMenuProps) {
         <Link to="/Bitrix24" onClick={open}>
           Добавление в Bitrix24
         </Link>
+        <Link to="/Settings" onClick={open}>
+          Настройки
+        </Link>
       </div>
       <button onClick={open}>Закрыть панель</button>
     </div>
