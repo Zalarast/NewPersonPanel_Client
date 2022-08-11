@@ -1,0 +1,38 @@
+.Settings {
+    height: 100%;
+    display: grid;
+    overflow: auto;
+}
+
+.Settings input {
+    border-radius: 15px;
+    padding: 5px 5px;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: large;
+}
+
+.settingsBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid black;
+    padding: 20px 0px;
+}
+
+.settingsBlock .avatar {
+    height: 90%;
+    border-radius: 50px;
+}
+
+.settingsBlock h1 {
+    font-weight: 500;
+    font-size: xx-large;
+    margin: 0;
+}
+
+.settingsBlock h2 {
+    font-size: large;
+    font-weight: 200;
+    margin-bottom: 5px;
+}
