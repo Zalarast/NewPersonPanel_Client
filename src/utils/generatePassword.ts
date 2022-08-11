@@ -1,4 +1,4 @@
-export function generatePassword(length:number): string {
+export function generatePassword(length: number): string {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
   const numbers = "1234567890".split("");
   const array = [...alphabet, ...numbers];
