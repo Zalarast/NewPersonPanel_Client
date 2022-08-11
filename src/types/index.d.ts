@@ -3,6 +3,16 @@ export interface userInfo {
   avatar?: string;
 }
 
+export interface userInfoSettings extends userInfo {
+  pass?: string;
+}
+
+export interface ADInfo {
+  ldap?: string;
+  login?: string;
+  pass?: string;
+}
+
 export interface LoginProps {
   auth: () => void;
   login: boolean;
@@ -36,4 +46,9 @@ export interface HeadProps {
 export interface UserMenuProps {
   userInfo: userInfo;
   logOut: () => void;
+}
+
+export interface SettingsInfo {
+  userInfo?: userInfoSettings;
+  ADInfo?: ADInfo
 }
