@@ -3,6 +3,10 @@
     display: flex;
     flex-direction: column;
     font-family: Impact, Charcoal, sans-serif;
+    background-image: url("https://kartinkin.net/uploads/posts/2021-07/1625587441_21-kartinkin-com-p-tyomnii-fon-dlya-rabochego-stola-minimaliz-21.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .Main button {
