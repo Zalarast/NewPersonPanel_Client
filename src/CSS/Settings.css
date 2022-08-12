@@ -21,8 +21,8 @@
 }
 
 .settingsBlock .avatar {
-    height: 90%;
-    border-radius: 50px;
+    height: 150px;
+    border-radius: 100%;
 }
 
 .settingsBlock h1 {
