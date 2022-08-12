@@ -1,16 +1,11 @@
 export interface userInfo {
-  login?: string;
-  avatar?: string;
-}
-
-export interface userInfoSettings extends userInfo {
-  pass?: string;
+  login?: string | null;
+  avatar?: string | null;
 }
 
 export interface ADInfo {
-  ldap?: string;
-  login?: string;
-  pass?: string;
+  ldap?: string | null;
+  login?: string | null;
 }
 
 export interface LoginProps {
@@ -49,6 +44,6 @@ export interface UserMenuProps {
 }
 
 export interface SettingsInfo {
-  userInfo?: userInfoSettings;
+  userInfo?: userInfo;
   ADInfo?: ADInfo
 }
